@@ -1,0 +1,60 @@
+{% comment %} {%- liquid
+  assign selected_variant = product.selected_or_first_available_variant
+
+  if selected_variant.metafields.custom.variant_ingredients != blank
+    assign single_inci = selected_variant.metafields.custom.variant_ingredients
+  elsif product.metafields.custom.inci != blank
+    assign single_inci = product.metafields.custom.inci
+  else
+    assign single_inci = nil
+  endif
+-%}
+
+{%- if product.variants.size == 1 -%}
+
+  {%- if single_inci != blank -%}
+    {%- render 'accordion',
+      title: 'INCI',
+      content: single_inci,
+      prose_content: true,
+      size: 'lg',
+      block: block
+    -%}
+  {%- endif -%}
+
+{%- else -%}
+
+  {%- for variant in product.variants -%}
+    {%- liquid
+      if variant.metafields.custom.variant_ingredients != blank
+        assign this_inci = variant.metafields.custom.variant_ingredients
+      elsif product.metafields.custom.inci != blank
+        assign this_inci = product.metafields.custom.inci
+      else
+        assign this_inci = nil
+      endif
+    -%}
+
+    {%- if this_inci != blank -%}
+      <div
+        class="product-inci-accordion"
+        data-variant-id="{{ variant.id }}"
+        {% if variant == product.selected_or_first_available_variant %}
+          style="display: block;"
+        {% else %}
+          style="display: none;"
+        {% endif %}
+      >
+        {%- render 'accordion',
+          title: 'INCI',
+          content: this_inci,
+          prose_content: true,
+          size: 'lg',
+          block: block
+        -%}
+      </div>
+    {%- endif -%}
+
+  {%- endfor -%}
+
+{%- endif -%} {% endcomment %}

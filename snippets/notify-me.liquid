@@ -1,0 +1,38 @@
+{% comment %} {% unless product.selected_or_first_available_variant.available %}
+
+  <style>
+    .notify-me-wrapper {
+      margin-top: 20px;
+    }
+    .notify-me-btn {
+      width: 100%;
+      padding: 12px 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+    }
+    .notify-me-btn:hover {
+      background-color: #333;
+    }
+  </style>
+
+  <div class="notify-me-wrapper">
+    <div data-inject-flashy-popup="65249" data-conditions="false"></div>
+    <button type="button" class="notify-me-btn" id="notify-me-trigger">
+      עדכנו אותי כשיחזור למלאי
+    </button>
+  </div>
+{% comment %} 
+  <script>
+    document.addEventListener('variant:changed', function(e) {
+      const wrapper = document.querySelector('.notify-me-wrapper');
+      if (!wrapper) return;
+      wrapper.style.display = e.detail?.variant?.available ? 'none' : 'block';
+    });
+  </script> {% endcomment %}
+
+{% endunless %} {% endcomment %}

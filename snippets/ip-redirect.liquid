@@ -1,0 +1,32 @@
+{% doc %}
+  IP-based redirect to https://minus417.com for non-Israel visitors.
+  Skips in theme customizer and caches result in sessionStorage.
+
+  @example
+  {% render 'ip-redirect' %}
+{% enddoc %}
+
+{%- unless request.design_mode -%}
+<script>
+(async function() {
+  const REDIRECT_URL = 'https://minus417.com/';
+  const STORAGE_KEY = 'ip_country_checked';
+  const ISRAEL_COUNTRY_CODE = 'IL';
+
+  if (sessionStorage.getItem(STORAGE_KEY)) {
+    return;
+  }
+
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    sessionStorage.setItem(STORAGE_KEY, data.country_code || 'unknown');
+    if (data.country_code && data.country_code !== ISRAEL_COUNTRY_CODE) {
+      window.location.href = REDIRECT_URL;
+    }
+  } catch (e) {
+    console.error('Error checking IP country:', e);
+  }
+})();
+</script>
+{%- endunless -%}

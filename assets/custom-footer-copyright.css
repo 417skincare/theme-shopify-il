@@ -1,0 +1,22 @@
+.footer-copyright-content {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.footer-copyright-content__divider {
+  display: block;
+}
+
+.footer-copyright-content__item-store {
+  direction: ltr;
+}
+
+@media (max-width: 699px) {
+  .footer-copyright-content {
+    flex-direction: column-reverse;
+  }
+
+  .footer-copyright-content__divider {
+    display: none;
+  }
+}

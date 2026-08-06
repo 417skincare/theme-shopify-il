@@ -1,0 +1,97 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+LOCALIZATION SELECTOR COMPONENT
+----------------------------------------------------------------------------------------------------------------------
+
+This component renders a selector for a localization component (either country or locale).
+
+********************************************
+Supported variables
+********************************************
+
+* type: can be either "country" or "locale" (required)
+* show_country_name: for type "country", if set to true the country name is shown
+* show_country_flag: for type "country", if set to true the country flag is shown
+* id_prefix: an option to help dissociate the ID in case this is included several times in the same section
+{%- endcomment -%}
+
+{%- capture localization_form_id -%}localization-form-{{ id_prefix }}-{{ section.id }}-{{ type }}{%- endcapture -%}
+{%- capture localization_popover_id -%}popover-localization-{{ id_prefix }}-{{ section.id }}-{{ type }}{%- endcapture -%}
+
+{%- case type -%}
+  {%- when 'country' -%}
+    {%- comment -%}
+    ----------------------------------------------------------------------------------------------
+    COUNTRY SELECTOR
+    ----------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
+  {%- capture localization_form_id -%}localization-form-{{ id_prefix }}-{{ section.id }}-currency{%- endcapture -%}
+  {%- capture localization_popover_id -%}popover-localization-{{ id_prefix }}-{{ section.id }}-currency{%- endcapture -%}
+
+  <div class="relative">
+    <button type="button" class="localization-toggle heading text-xxs link-faded" aria-controls="{{ localization_popover_id }}" aria-label="Изменить валюту" aria-expanded="false">
+      {%- if localization.country.currency.iso_code == 'ILS' -%}
+        <span>ILS ₪</span>
+      {%- else -%}
+        <span>USD $</span>
+      {%- endif -%}
+      {%- render 'icon' with 'chevron-down' -%}
+    </button>
+
+    <x-popover id="{{ localization_popover_id }}" initial-focus="[aria-selected='true']" class="popover popover--{{ placement | default: 'bottom-start' }} color-scheme color-scheme--dialog">
+      {%- form 'localization', id: localization_form_id -%}
+        <x-listbox class="popover__value-list">
+          <button type="submit" name="country_code" class="popover__value-option" role="option" value="US" aria-selected="{% if localization.country.currency.iso_code != 'ILS' %}true{% else %}false{% endif %}">
+            USD $
+          </button>
+
+          <button type="submit" name="country_code" class="popover__value-option" role="option" value="IL" aria-selected="{% if localization.country.currency.iso_code == 'ILS' %}true{% else %}false{% endif %}">
+            ILS ₪
+          </button>
+        </x-listbox>
+      {%- endform -%}
+    </x-popover>
+  </div>
+
+  {%- when 'locale' -%}
+    {%- comment -%}
+    ----------------------------------------------------------------------------------------------
+    LOCALE SELECTOR
+    ----------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
+    <div class="relative">
+      <button type="button" class="localization-toggle heading text-xxs link-faded" aria-controls="{{ localization_popover_id }}" aria-label="{{ 'general.localization.change_language_accessibility_text' | t | escape }}" aria-expanded="false">
+        <svg class="lang-globe" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        {% comment %} {{- localization.language.endonym_name | capitalize -}} {% endcomment %}
+         {{- localization.language.iso_code | upcase -}}
+        {%- render 'icon' with 'chevron-down' -%}
+      </button>
+
+      <x-popover id="{{ localization_popover_id }}" initial-focus="[aria-selected='true']" class="popover popover--{{ placement | default: 'bottom-start' }} color-scheme color-scheme--dialog">
+        <p class="h4" slot="header">{{ 'general.localization.language' | t }}</p>
+
+        {%- form 'localization', id: localization_form_id -%}
+          <x-listbox class="popover__value-list">
+            {%- for language in localization.available_languages -%}
+              {%- assign is_selected = false -%}
+
+              {%- if language.iso_code == localization.language.iso_code -%}
+                {%- assign is_selected = true -%}
+              {%- endif -%}
+
+              <button type="submit" name="locale_code" class="popover__value-option" role="option" value="{{ language.iso_code }}" aria-selected="{% if is_selected %}true{% else %}false{% endif %}">
+                {% comment %} {{- language.endonym_name | capitalize -}} {% endcomment %}
+                {{- language.endonym_name | capitalize }} ({{ language.iso_code | slice: 0, 2 | upcase }})
+              </button>
+            {%- endfor -%}
+          </x-listbox>
+        {%- endform -%}
+      </x-popover>
+    </div>
+{%- endcase -%}

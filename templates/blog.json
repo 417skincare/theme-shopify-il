@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "custom_css": [
+        "h2{text-shadow: 0 1px 3px rgb(0 0 0);}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_blog_title": false,
+        "show_rss_feed": false,
+        "show_tags": false,
+        "posts_per_page": 10,
+        "feature_first_blog_post": true,
+        "featured_blog_post_color_scheme": "scheme-4",
+        "show_category": false,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

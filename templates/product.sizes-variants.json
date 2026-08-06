@@ -1,0 +1,442 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "1e21c8eb-598e-46e8-9a3c-77d0a3b33eba": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "vendor_MGyAMM": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "badges_tRdizd": {
+          "type": "badges",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_CgQWbn": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false,
+            "rating_mode": "count"
+          }
+        },
+        "text_fpCeaL": {
+          "type": "text",
+          "name": "Size",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>נפח:</strong> {{ product.metafields.custom.size.value }}</p>"
+          }
+        },
+        "text_Vyrxmn": {
+          "type": "text",
+          "name": "Bullet Points",
+          "settings": {
+            "text": "<ul><li><strong>מתאים ל:</strong> {{ product.metafields.custom.suitable_for.value }}</li><li><strong>תוצאה:</strong> {{ product.metafields.custom.result.value }}</li><li><strong>תחושה:</strong> {{ product.metafields.custom.feeling.value }}</li></ul>"
+          }
+        },
+        "kite_discount_free_gift_app_block_vol_discount_NHzXeb": {
+          "type": "shopify://apps/kite-discount-free-gift/blocks/app-block-volDiscount/2c7302c4-455d-4078-a829-48563ba26089",
+          "settings": {
+            "blockId": "block-id"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": false,
+            "show_below_gallery": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "product_variations_HVBiLQ": {
+          "type": "product_variations",
+          "settings": {
+            "option_name": "גודל",
+            "option_value_metafield": "custom.variation_value",
+            "products": "{{ product.metafields.custom.variation_products.value }}",
+            "selector_style": "variant_image"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "feature_with_icon_dLEUwt": {
+          "type": "feature_with_icon",
+          "repeater": "{{ product.metafields.custom.icons_highlights.value }}",
+          "settings": {
+            "text": "{{ block.repeater.name.value }}",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "{{ block.repeater.icon.value }}",
+            "icon_width": 16,
+            "background": "#ffffff",
+            "text_color": "#6b6b6b",
+            "border_color": ""
+          }
+        },
+        "sku_Mx8ppL": {
+          "type": "sku",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "#1c1c1c",
+            "atc_button_text_color": "#ffffff",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "accordion_Jdkj4h": {
+          "type": "accordion",
+          "name": "Long Description",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "תאור",
+            "content": "{{ product.metafields.custom.description | metafield_tag }}",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_QyQAQf": {
+          "type": "accordion",
+          "name": "How to Use",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "הוראות שימוש",
+            "content": "<p>{{ product.metafields.custom.use_instructions | metafield_tag }}</p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_HMJUMn": {
+          "type": "accordion",
+          "name": "Ingredients",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "רכיבים",
+            "content": "<p>{{ product.metafields.custom.inci | metafield_tag }}</p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_kYmWML": {
+          "type": "accordion",
+          "name": "Active Ingredients",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "רכיבים פעילים",
+            "content": "{{ product.metafields.custom.active_ingredients | metafield_tag }}",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_dUyxVR": {
+          "type": "accordion",
+          "name": "Bundle Contents",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "מה בפנים?",
+            "content": "{{ product.metafields.custom.bundle_description | metafield_tag }}",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "disabled": true,
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "1e21c8eb-598e-46e8-9a3c-77d0a3b33eba",
+        "vendor_MGyAMM",
+        "badges_tRdizd",
+        "title",
+        "price",
+        "rating_CgQWbn",
+        "text_fpCeaL",
+        "text_Vyrxmn",
+        "kite_discount_free_gift_app_block_vol_discount_NHzXeb",
+        "description",
+        "variant_picker",
+        "product_variations_HVBiLQ",
+        "quantity_selector",
+        "feature_with_icon_dLEUwt",
+        "sku_Mx8ppL",
+        "buy_buttons",
+        "accordion_Jdkj4h",
+        "accordion_QyQAQf",
+        "accordion_HMJUMn",
+        "accordion_kYmWML",
+        "accordion_dUyxVR",
+        "complementary_products"
+      ],
+      "custom_css": [
+        ".feature-badge {background-color: transparent !important;}",
+        ".feature-badge img {width: 20px;}",
+        "button.product-gallery__thumbnail[data-media-type=\"external_video\"] img {height: 100%; object-fit: cover;}",
+        "button.product-gallery__thumbnail[data-media-type=\"external_video\"] {aspect-ratio: 4 / 5;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "container_size": "lg",
+        "product_info_size": 50,
+        "show_sticky_add_to_cart": false,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "desktop_media_grid_gap": 0,
+        "mobile_controls": "free_scroll",
+        "enable_media_autoplay": true,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3
+      }
+    },
+    "7f74e85d5f98bd7cd22f": {
+      "type": "apps",
+      "blocks": {
+        "fee428b1-1827-4340-9057-aae40b873a68": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "fee428b1-1827-4340-9057-aae40b873a68"
+      ],
+      "name": "Reviews Yotpo",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "custom_liquid_exQbcj": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".container {margin: 0;}",
+        "quarate-slider {width: 100%; display: inline-block;}"
+      ],
+      "name": "Qurate Slider",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<qurate-slider></qurate-slider>",
+        "text_alignment": "center"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "אולי תאהב/י גם",
+        "content": ""
+      }
+    },
+    "collection_list_4YH3fH": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_EnwKED": {
+          "type": "collection",
+          "name": "טיפוח העור",
+          "settings": {
+            "color_scheme": "",
+            "collection": "skincare",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "טיפוח העור",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_nhjGUn": {
+          "type": "collection",
+          "name": "טיפוח הגוף",
+          "settings": {
+            "color_scheme": "",
+            "collection": "body-care",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "טיפוח הגוף",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_LLFeNn": {
+          "type": "collection",
+          "name": "מוצרי שיער",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "hair-care",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "מוצרי שיער",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_LpM7G9": {
+          "type": "collection",
+          "name": "מארזים",
+          "settings": {
+            "color_scheme": "",
+            "collection": "sets-gifts",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "מארזים",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_E4VzhU": {
+          "type": "collection",
+          "name": "טיפוח לגבר",
+          "settings": {
+            "color_scheme": "",
+            "collection": "for-him",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "טיפוח לגבר",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_g9Uj7M": {
+          "type": "collection",
+          "name": "לבית",
+          "settings": {
+            "color_scheme": "",
+            "collection": "for-home",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "לבית",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_EnwKED",
+        "collection_nhjGUn",
+        "collection_LLFeNn",
+        "collection_LpM7G9",
+        "collection_E4VzhU",
+        "collection_g9Uj7M"
+      ],
+      "custom_css": [],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_desktop": 3,
+        "stack_collections_mobile": false,
+        "collections_per_row_mobile": "1",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7f74e85d5f98bd7cd22f",
+    "custom_liquid_exQbcj",
+    "related-products",
+    "collection_list_4YH3fH"
+  ]
+}
